@@ -1,0 +1,17 @@
+# Binaries
+bin/
+texasholdem
+
+# Go
+*.exe
+*.test
+*.out
+
+# Flutter
+.dart_tool/
+.packages
+build/
+
+# OS
+.DS_Store
+Thumbs.db

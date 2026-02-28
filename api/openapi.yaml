@@ -1,0 +1,14 @@
+openapi: 3.0.0
+info:
+  title: Texas Hold'em API
+  version: 0.1.0
+paths:
+  /evaluate:
+    post:
+      summary: Evaluate a hand
+  /compare:
+    post:
+      summary: Compare two hands
+  /simulate:
+    post:
+      summary: Monte Carlo simulation

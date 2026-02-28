@@ -1,0 +1,18 @@
+name: texasholdem_flutter
+description: Flutter client for Texas Hold'em Go REST API
+publish_to: 'none'
+version: 0.1.0
+environment:
+  sdk: '>=2.17.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
