@@ -34,10 +34,11 @@ func NewRouter() *gin.Engine {
     r.POST("/compare", compareHandler)
     r.POST("/simulate", simulateHandler)
     r.GET("/health", func(c *gin.Context){ c.String(http.StatusOK, "OK") })
-    // Serve static frontend if present (build output in /web)
+    // Serve static frontend if present (build output in ./web)
+    // Use relative path so file lookup works in different container contexts.
     // Static wildcard must be registered after specific routes to avoid conflicts
-    r.Static("/", "/web")
-    r.NoRoute(func(c *gin.Context) { c.File("/web/index.html") })
+    r.Static("/", "./web")
+    r.NoRoute(func(c *gin.Context) { c.File("./web/index.html") })
     return r
 }
 
