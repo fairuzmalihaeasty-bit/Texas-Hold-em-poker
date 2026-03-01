@@ -30,14 +30,14 @@ type SimReq struct {
 
 func NewRouter() *gin.Engine {
     r := gin.Default()
-        // Serve static frontend if present (build output in /web)
-        // This makes the site root serve the frontend instead of 404
-        r.Static("/", "/web")
-        r.NoRoute(func(c *gin.Context) { c.File("/web/index.html") })
     r.POST("/evaluate", evaluateHandler)
     r.POST("/compare", compareHandler)
     r.POST("/simulate", simulateHandler)
     r.GET("/health", func(c *gin.Context){ c.String(http.StatusOK, "OK") })
+    // Serve static frontend if present (build output in /web)
+    // Static wildcard must be registered after specific routes to avoid conflicts
+    r.Static("/", "/web")
+    r.NoRoute(func(c *gin.Context) { c.File("/web/index.html") })
     return r
 }
 
