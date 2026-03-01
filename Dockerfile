@@ -17,6 +17,7 @@ RUN go build -trimpath -o /texasholdem ./cmd/server
 # Final image
 FROM scratch
 COPY --from=builder /texasholdem /texasholdem
+COPY --from=builder /src/web /web
 
 EXPOSE 8080
 ENTRYPOINT ["/texasholdem"]
