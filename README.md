@@ -63,7 +63,7 @@ Example: `{ "category": 1, "ranks": [14, 13, 11] }` means a One Pair of Aces (pa
 
 Request:
 ```bash
-curl -s -X POST https://your-domain/evaluate \
+curl -s -X POST https://texas-hold-em-poker.onrender.com/evaluate \
   -H "Content-Type: application/json" \
   -d '{"hole":["As","Kd"],"community":["2d","7c","Jd"]}'
 ```
@@ -79,7 +79,7 @@ Response:
 
 Request:
 ```bash
-curl -s -X POST https://your-domain/compare \
+curl -s -X POST https://texas-hold-em-poker.onrender.com/compare \
   -H "Content-Type: application/json" \
   -d '{"hand1":{"hole":["As","Ah"],"community":["Kd","Qd","Jd","2s","3c"]},"hand2":{"hole":["Ks","Kh"],"community":["Kd","Qd","Jd","2s","3c"]}}'
 ```
@@ -97,7 +97,7 @@ Response:
 
 Request:
 ```bash
-curl -s -X POST https://your-domain/simulate \
+curl -s -X POST https://texas-hold-em-poker.onrender.com/simulate \
   -H "Content-Type: application/json" \
   -d '{"hero":{"hole":["As","Kd"]},"community_known":["2d","7c","Jd"],"num_players":2,"iterations":2000,"concurrency":4}'
 ```
