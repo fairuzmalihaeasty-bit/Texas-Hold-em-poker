@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../api/client.dart';
+import '../config.dart';
 
 class EvaluateScreen extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class _EvaluateScreenState extends State<EvaluateScreen> {
   final _holeController = TextEditingController(text: 'As,Kd');
   final _communityController = TextEditingController(text: '2d,7c,Jd');
   String _output = '';
-  final api = ApiClient(baseUrl: 'http://10.0.2.2:8080');
+  final api = ApiClient(baseUrl: BASE_URL);
 
   void _submit() async {
     final hole = _holeController.text.split(',').map((s) => s.trim()).where((s)=>s.isNotEmpty).toList();

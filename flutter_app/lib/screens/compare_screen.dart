@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../api/client.dart';
+import '../config.dart';
 
 class CompareScreen extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class _CompareScreenState extends State<CompareScreen> {
   final _h2Hole = TextEditingController(text: 'Ks,Kh');
   final _h2Community = TextEditingController(text: 'Kd,Qd,Jd,2s,3c');
   String _output = '';
-  final api = ApiClient(baseUrl: 'http://10.0.2.2:8080');
+  final api = ApiClient(baseUrl: BASE_URL);
 
   void _submit() async {
     final hand1 = {

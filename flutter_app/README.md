@@ -22,15 +22,15 @@ flutter run
 ```
 
 Notes about the backend URL
-- The app's API client points to `http://10.0.2.2:8080` by default (Android emulator -> host machine). If you run the Go server on the host machine and use an Android emulator, leave it as-is.
-- If you run on a physical device or iOS simulator, change the `baseUrl` in `lib/api/client.dart` to the appropriate host (e.g. `http://192.168.1.42:8080` or `http://localhost:8080` for iOS simulator).
+- The app's API client uses the `BASE_URL` value in `lib/config.dart`. By default it's set to `http://10.0.2.2:8080` (Android emulator -> host machine).
+- For a physical device or iOS simulator, update `lib/config.dart` to the appropriate host (e.g. `http://192.168.1.42:8080` or `http://localhost:8080` for iOS simulator).
 
 Edit the client base URL
 
-Open `lib/api/client.dart` and update the `baseUrl` value passed to `ApiClient` constructors, for example:
+Open `lib/config.dart` and update the `BASE_URL` constant, for example:
 
 ```dart
-final api = ApiClient(baseUrl: 'http://192.168.1.42:8080');
+const String BASE_URL = 'https://my-deployed-backend.example.com';
 ```
 
 Build release APK (Android)
